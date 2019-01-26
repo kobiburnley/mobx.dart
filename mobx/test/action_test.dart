@@ -232,7 +232,8 @@ void main() {
       executionCount++;
     });
 
-    runInAction(() => x.value = 100);
+    final value = runInAction(() => x.value = 100);
+    expect(value, equals(100));
 
     // Notifications are fired now
     expect(executionCount, equals(2));
